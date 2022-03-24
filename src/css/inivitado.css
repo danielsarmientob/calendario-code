@@ -1,0 +1,31 @@
+.invitado {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.invitadoDatos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font: var(--body2-regular);
+}
+
+.invitadoDatos span:nth-child(1) {
+    color: var(--gray50);
+}
+
+.invitadoDatos span:nth-child(2) {
+    color: var(--gray20);
+}
+
+.coverInvitado img {
+    vertical-align: middle;
+}
+
+.invitado i {
+    cursor: pointer;
+}
+
+.invitadoHidden {
+    display: none;
+}

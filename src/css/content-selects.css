@@ -1,0 +1,40 @@
+@import './sidebar-checkbox.css';
+
+.cabeceraSelects span {
+    font: var(--body1-medium);
+    color: var(--gray30);
+}
+
+.cabeceraSelects i {
+    font-size: 1.5rem;
+    color: var(--gray50);
+}
+.cabeceraSelects {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 0.625rem;
+}
+
+.cabeceraSelects label {
+    transition: .3s transform;
+    cursor: pointer;
+}
+.cabeceraSelects input:checked ~ label{
+    transform: rotate(180deg);
+}
+.checkboxs {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    block-size: 100%;
+    transition: .3s block-size;
+}
+
+.checkboxsHidden {
+    block-size: 0;
+}
+
+.checkboxsHidden > * {
+    display: none;
+}

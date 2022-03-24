@@ -1,0 +1,47 @@
+.formModal {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputTitleTask {
+    margin-inline-start: 2.5rem;
+    border: none;
+    box-shadow:  0 1px 0 var(--gray10);
+    min-block-size: 2rem;
+    outline: none;
+    color: var(--gray50); 
+    font: var(--subtitle-subtitle1);
+}
+
+.inputTitleTask:focus,
+.inputTitleTask:hover {
+    box-shadow:  0 1px 0 var(--blue10);
+}
+.inputTitleTask::-webkit-input-placeholder { 
+    color: var(--gray50); 
+    font: var(--subtitle-subtitle1);
+}
+
+.inputDates input{
+    border: none;
+    background: var(--gray10);
+    padding-inline: 0.75rem;
+    padding-block: .25rem;
+    border-radius: .25rem;
+}
+.formModal i {
+    font-size: 1.5rem;
+}
+
+.inputModal {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.location button,
+.file button {
+    color: var(--gray20);
+}

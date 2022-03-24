@@ -1,0 +1,68 @@
+.miniCalendario {
+    display: grid;
+    grid-template-columns: repeat(7, minMax(1.75rem,2rem));
+    grid-template-rows: repeat(7, minMax(1.75rem, auto));
+    align-items: center;
+    justify-items: center;
+    font: var(--body3-regular);
+    color: var(--gray30);
+    margin-block-start: .5rem;
+    min-inline-size: 12.25rem;
+}
+
+.miniCalendario-dia {
+    cursor: pointer;
+    outline: none;
+}
+.miniCalendario-dia:hover,
+.miniCalendario-dia:focus {
+    display: flex;
+    block-size: 100%;
+    inline-size: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--blue20);
+    color: var(--white); 
+}
+
+
+div [class*='is-inactive'],
+div [class*='is-inactive']:hover,
+div [class*='is-inactive']:focus {
+    color: var(--gray20);
+    cursor: auto;
+}
+/* .miniCalendario-dia.is-inactive:hover,
+.miniCalendario-dia.is-inactive:focus,
+.miniCalendario-dia.is-inactive {
+    color: var(--gray20);
+    cursor: auto;
+} */
+
+.miniCalendario-dia.is-today {
+    display: flex;
+    block-size: 100%;
+    inline-size: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--blue10);
+    color: var(--white);
+}
+
+.miniCalendario-estado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.miniCalendario-fecha span {
+    font: var(--body1-medium);
+    color: var(--gray30);
+}
+.miniCalendario-estado button {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    padding: 0;
+    background: var(--white);
+}

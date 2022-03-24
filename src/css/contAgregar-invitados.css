@@ -1,0 +1,12 @@
+@import './agregar-inivitados.css';
+@import './inivitado.css';
+
+.contInvitados {
+    margin-block-start: .75rem;
+    margin-inline-start: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    max-block-size: 7.5rem;
+    overflow-y: auto;
+    gap: .75rem;
+}

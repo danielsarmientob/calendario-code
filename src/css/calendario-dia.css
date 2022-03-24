@@ -1,0 +1,53 @@
+.calendarioDia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    border-block-end: 1px solid currentColor;
+}
+
+.calendarioDia a {
+    text-decoration: none;
+    color: currentColor;
+    outline: none;
+}
+
+.calendarioDia a:hover span:nth-of-type(1),
+.calendarioDia a:focus span:nth-of-type(1) {
+    color: var(--blue10);
+}
+
+.calendarioDia a:hover span:nth-of-type(2),
+.calendarioDia a:focus span:nth-of-type(2) {
+    background: var(--blue10);
+    padding: .5rem;
+    box-sizing: border-box;
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.calendarioDia span:nth-of-type(1) {
+    font: var(--body1-medium);
+}
+
+.calendarioDia span:nth-of-type(2) {
+    font: var(--subtitle-subtitle1);
+    block-size: 2.75rem;
+    inline-size: 2.75rem;
+    display: inline-block;
+}
+
+.calendarioDia::before {
+    content: '';
+    block-size: 2rem;
+    inline-size: 1px;
+    background: currentColor;
+    position: absolute;
+    /* bottom: 0; */
+    inset-block-end: 0;
+}

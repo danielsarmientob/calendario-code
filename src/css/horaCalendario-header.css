@@ -1,0 +1,6 @@
+.horaHeader {
+    position: sticky;
+    inset-block-start: 0;
+    background: white;
+    z-index: 1;
+}

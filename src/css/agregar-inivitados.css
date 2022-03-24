@@ -1,0 +1,24 @@
+.inputAdd {
+    display: flex;
+}
+.inputAdd input{
+    padding-block: 0.625rem;
+    padding-inline-start: .75rem;
+    flex: 1;
+    border: none;
+    background: var(--gray10);
+    border-radius: .25rem;
+    font: var(--body1-regular);
+    outline: none;
+}
+
+.inputAdd input:focus ,
+.inputAdd input:hover {
+    box-shadow: 0 2px 0 var(--blue10);
+}
+.inputAdd input::-webkit-input-placeholder {
+    color: var(--gray20);
+}
+.inputAdd {
+    flex: 1;
+}

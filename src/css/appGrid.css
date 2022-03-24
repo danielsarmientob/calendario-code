@@ -1,0 +1,26 @@
+.appGrid {
+    display: grid;
+    grid-template-columns: 244px 1fr;
+    grid-template-rows: 96px 1fr;
+    grid-template-areas: "header header" "sideBar mainCalendario";
+}
+
+.header {
+    grid-area: header;
+    border: 1px solid var(--gray10);
+}
+
+.sideBar {
+    grid-area: sideBar;
+    block-size: auto;
+    padding-inline: 1.5rem;
+    padding-block-start: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mainCalendario {
+    grid-area: mainCalendario;
+    block-size: auto;
+}

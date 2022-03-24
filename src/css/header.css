@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1.5rem;
+}
+
+.header-primary {
+    display: flex;
+    gap: 3rem;
+}
+
+.btnMenu {
+    background: var(--white);
+    padding: 0;
+}
+
+.header-menu {
+    display: flex;
+    gap: .5rem;
+}
+.cover-header img {
+    vertical-align: middle;
+}
+.header-secundary {
+    display: flex;
+    gap: 3rem;
+}

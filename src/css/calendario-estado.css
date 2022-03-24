@@ -1,0 +1,10 @@
+.estado-calendario {
+    display: inline-flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.calendarioEsdato-fecha {
+    font: var(--subtitle-subtitle1);
+    color: var(--gray30);
+}

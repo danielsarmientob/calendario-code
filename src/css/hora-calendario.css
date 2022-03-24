@@ -1,0 +1,20 @@
+.horaCalendario {
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.horaCalendario-text {
+    position: absolute;
+    inset-block-end: -0.3125rem;
+    font: var(--body3-regular);
+}
+
+.horaCalendario::before {
+    content: '';
+    block-size: 1px;
+    inline-size: .5rem;
+    background: currentColor;
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+}

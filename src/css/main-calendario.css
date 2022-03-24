@@ -1,0 +1,11 @@
+.mainCalendario {
+    padding-inline: 1.5rem;
+    color: var(--gray20);
+    position: relative;
+}
+.calendarioSemana { 
+    display: grid;
+    grid-template-columns: 2.75rem repeat(7,minMax(7.5rem,10rem));
+    grid-template-rows: 7.75rem repeat(24,minMax(4rem,auto));
+    block-size: inherit;
+}
