@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 
 export const Inivitado = ({ urlImg, nombre, isOrganizador }) => {
@@ -22,4 +23,11 @@ export const Inivitado = ({ urlImg, nombre, isOrganizador }) => {
             }
         </div>
     )
+}
+
+
+Inivitado.propTypes = {
+    urlImg: PropTypes.string.isRequired,
+    nombre: PropTypes.string.isRequired,
+    isOrganizador: PropTypes.bool.isRequired
 }
