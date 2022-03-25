@@ -13,7 +13,7 @@ export const App = () => {
                 <SideBar/>
                 <MainCalendario/>
             </div>
-            {/* <Modal/> */}
+            <Modal/>
         </div>
     )
 }

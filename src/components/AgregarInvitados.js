@@ -8,7 +8,7 @@ export const AgregarInvitados = () => {
     return (
         <div className='contAgregarInvitados'>
             <div className='agregarInvitados inputModal'>
-                <i className='icon-users' arial-hidden={true}></i>
+                <i className='icon-users' aria-hidden={true}></i>
                 <div className='inputAdd'>
                     <input type={'text'} placeholder='Agregar invitados'/>
                 </div>

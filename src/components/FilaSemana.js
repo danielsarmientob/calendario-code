@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { DiaCalendario } from './DiaCalendario';
 
 export const FilaSemana = ({hora}) => {
   
@@ -7,38 +8,13 @@ export const FilaSemana = ({hora}) => {
                 <div className='horaCalendario'>
                     <span className='horaCalendario-text'>{ (hora !== '24:00')? hora : '' }</span>
                 </div>
-                <div tabIndex={'0'} className='taskCell'>
-                    <div className='task'>
-                        <p>Hacer ejecicios</p>
-                        <p>
-                            <time time="17:00">5</time> - <time time="18:00">6 pm</time>
-                        </p>
-                    </div>
-                </div>
-                <div tabIndex={'0'} className='taskCell'>
-                    <div className='task'>
-                        <p>Hacer ejecicios</p>
-                        <p>
-                            <time time="17:00">5</time> - <time time="18:00">6 pm</time>
-                        </p>
-                    </div>
-                </div>
-                <div tabIndex={'0'} className='taskCell'>
-                    <div className='task'>
-                        <p>Hacer ejecicios</p>
-                        <p>
-                            <time time="17:00">5</time> - <time time="18:00">6 pm</time>
-                        </p>
-                    </div>
-                </div>
-                <div tabIndex={'0'} className='taskCell is-active'>
-                </div>
-                <div tabIndex={'0'} className='taskCell'>
-                </div>
-                <div tabIndex={'0'} className='taskCell'>
-                </div>
-                <div tabIndex={'0'} className='taskCell'>
-                </div>
+                <DiaCalendario titulo='Hacer ejercicios' hora={hora}/>
+                <DiaCalendario titulo='Hacer ejercicios' hora={hora}/>
+                <DiaCalendario titulo=''/>
+                <DiaCalendario titulo=''/>
+                <DiaCalendario titulo=''/>
+                <DiaCalendario titulo=''/>
+                <DiaCalendario titulo=''/>
         </>
     )
 }

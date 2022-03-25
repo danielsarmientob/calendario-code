@@ -6,7 +6,7 @@ import { FilaSemana } from './FilaSemana'
 export const MainCalendario = () => {
     return (
         <div className='mainCalendario'>
-            {/* <CurrentTime/> */}
+            <CurrentTime/>
             <div className='calendarioSemana'>
                 <CabeceraSemanal/>
                 <FilaSemana hora={'01:00'}/>

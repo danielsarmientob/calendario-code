@@ -4,6 +4,10 @@ import { AgregarInvitados } from './AgregarInvitados';
 import { InputFile } from './InputFile';
 
 export const Modal = () => {
+    const handleCloseModal = ()=>{
+        const $modal = document.querySelector('.modal');
+        $modal.style.visibility = 'hidden';
+    }
     return (
         <div className='modal'>
             <div className='contentModal'>
@@ -35,7 +39,7 @@ export const Modal = () => {
                     </form>   
                 </div>
                 <div className='modalActions'>
-                    <button className='button'>Cancelar</button>
+                    <button className='button' onClick={handleCloseModal}>Cancelar</button>
                     <button className='button is-primary'>Guardar</button>
                 </div>
             </div>
