@@ -27,3 +27,7 @@
     text-align: end;
     margin-block-start: 1.5rem;
 }
+
+.modalActions > button {
+    margin-inline-start: 2px;  
+}

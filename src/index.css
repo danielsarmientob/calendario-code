@@ -41,4 +41,62 @@
 body {
     font: var(--body1-medium);
     margin: 0;
+    background: var(--white);
+    color: var(--gray50);   
 }
+
+@media screen and (prefers-color-scheme: dark){
+    :root{
+       --white: #222222;
+       --gray50: #fffffe;
+       --gray10: #70757a;
+       --gray30: #f1f3f4;
+    }
+
+    .sidebarCheckbox input[type=checkbox]:checked ~ label::before{
+        content: url('./icons/checkSquare-dark.svg');
+    }
+    .sidebarCheckbox input[type=checkbox] ~ label::before{
+        content: url('./icons/contCheck-dark.svg');
+    }
+    .horaHeader {
+        background: var(--white);
+    }
+
+    .search input {
+        color: var(--gray50);
+    }
+    .search:focus-within i {
+        color: var(--gray50);
+    }
+
+    .search input::-webkit-input-placeholder {
+        color: var(--gray50);
+    }
+
+    .button.is-secundary {
+        color: var(--gray20);
+    }
+    
+    .button.is-secundary:focus,
+    .button.is-secundary:hover {
+        color: var(--gray50);
+    }
+
+    .inputTitleTask {
+        background: var(--gray10);
+        box-shadow:  0 1px 0 var(--gray50);
+    }
+    
+    .inputTitleTask::-webkit-input-placeholder { 
+        color: var(--gray50); 
+        font: var(--subtitle-subtitle1);
+    }
+
+    
+    .inputAdd input::-webkit-input-placeholder,
+    .inputAdd input{
+        color: var(--gray50);
+    }
+}
+

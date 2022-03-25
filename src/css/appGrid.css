@@ -7,7 +7,7 @@
 
 .header {
     grid-area: header;
-    border: 1px solid var(--gray10);
+    border-bottom: 1px solid var(--gray10);
 }
 
 .sideBar {
