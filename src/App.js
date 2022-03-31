@@ -1,19 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
-import { Header } from './components/Header';
-import { MainCalendario } from './components/MainCalendario';
-import { Modal } from './components/Modal';
-import { SideBar } from './components/SideBar';
+
+import { HomePage } from './Screen/HomePage';
+import { store } from './store/store';
 
 export const App = () => {
     return (
-        <div>
-            <div className='appGrid'>
-                <Header/>
-                <SideBar/>
-                <MainCalendario/>
-            </div>
-            <Modal/>
-        </div>
+        <Provider store={store}>
+            <HomePage/>
+        </Provider>
     )
 }
