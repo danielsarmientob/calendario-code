@@ -2,16 +2,16 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { types } from '../types/types';
+import { CabeceraMiniCalendario } from './CabeceraMiniCalendario';
 import { DiasMesCalendario } from './DiasMesCalendario';
 
 export const Minicalendario = () => {
     const dispatch = useDispatch();
-    const stateUi = useSelector(state => state.ui);
     const { 
         mesSelecc, 
         mesesDetalles,
-        yearActual 
-    } = stateUi;
+        yearActual,
+    } = useSelector(state => state.ui);;
 
 
 
@@ -67,16 +67,7 @@ export const Minicalendario = () => {
             </div>
             
             <div className='miniCalendario' aria-label='Calendario de navegación'>
-                {/* <div className='miniCalendario'></div>
-                <div className='miniCalendario'></div> */}
-                <span>D</span>
-                <span>L</span>
-                <span>M</span>
-                <span>M</span>
-                <span>J</span>
-                <span>V</span>
-                <span>S</span>
-                
+                <CabeceraMiniCalendario/>
                 <DiasMesCalendario/>
             </div>
         </div>

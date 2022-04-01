@@ -2,6 +2,8 @@ import React from 'react';
 
 import avatar from '../img/avatar.png';
 import logo from '../img/logo.png';
+import { BtnHoy } from './BtnHoy';
+import { ContFechaHeader } from './ContFechaHeader';
 
 export const Header = () => {
     return (
@@ -17,7 +19,7 @@ export const Header = () => {
                 </div>
                 
                 <div className='estado-calendario'>
-                    <button className='button is-secundary'>Hoy</button>
+                    <BtnHoy/>
                     <span className='navegacion-calendario'>
                         <a href='#' className='button btnIcon' aria-label='Semana anterior'>
                             <i className='icon-chevronLeft' aria-hidden={true}></i>
@@ -26,7 +28,7 @@ export const Header = () => {
                             <i className='icon-chevronRight' aria-hidden={true}></i>
                         </a>
                     </span>
-                    <time className='calendarioEsdato-fecha' dateTime='25-06-2021'>25 de Junio</time>
+                   <ContFechaHeader/>
                 </div>
             </div>
             

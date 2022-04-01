@@ -9,7 +9,10 @@ const initialState = {
     mesActual: currentTime.getMonth(),
     mesSelecc: currentTime.getMonth(),
     diaActual: currentTime.getDate(),
-    diaSelecc: currentTime.getDate(),
+    fechaSelecc: {
+        dia: currentTime.getDate(),
+        mes: currentTime.getMonth(),
+    },
     mesesDetalles: mesesDetalles,
     diasNombre: diasSemanaNombre,
     yearActual: currentTime.getFullYear(),
@@ -22,7 +25,33 @@ export const uiReducer = (state = initialState, action) =>{
             return({
                 mesSelecc: action.payload.mesSelecc,
                 ...data
-            })
+            });
+        case types.fechaSelecc:
+            const {fechaSelecc, ...dataD} = state;
+            return ({
+                fechaSelecc: {
+                    dia: action.payload.diaSelecc,
+                    mes: action.payload.mesSelecc,
+                },
+                ...dataD
+            });
+
+        case types.fechaActual:
+            
+            return ({
+                mesActual: currentTime.getMonth(),
+                mesSelecc: action.payload.mesSelecc,
+                diaActual: currentTime.getDate(),
+                fechaSelecc: {
+                    dia: action.payload.diaSelecc,
+                    mes: action.payload.mesSelecc,
+                },
+                mesesDetalles: mesesDetalles,
+                diasNombre: diasSemanaNombre,
+                yearActual: currentTime.getFullYear(),
+            });
+            
+            
         default:
             return state;
     }

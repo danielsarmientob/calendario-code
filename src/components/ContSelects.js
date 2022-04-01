@@ -17,9 +17,9 @@ export const ContSelects = () => {
                 </div>
                 <div className={`checkboxs ${isVisble? '' : 'checkboxsHidden'}`}>
                     <SidebarCheckbox 
-                        value='leonidas-esteban'
+                        value='reuniones'
                         id='cbLeo'
-                        text='Leonidas esteban'
+                        text='Reuniones'
                         checked={true}
                     />
                     <SidebarCheckbox 

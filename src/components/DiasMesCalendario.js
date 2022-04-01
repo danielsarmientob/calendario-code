@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { DiaClickMiniCalendario } from './DiaClickMiniCalendario';
 
 export const DiasMesCalendario = () => {
     let numDia = 0;
@@ -37,7 +38,8 @@ export const DiasMesCalendario = () => {
                         
                         if ((mesActual === mesSelecc) && (diaActual === numDia) ) clase = 'miniCalendario-dia is-today';
 
-                        return <div key={index} className={clase} tabIndex={'0'}>{numDia}</div>
+                        // return <div key={index} className={clase} tabIndex={'0'}>{numDia}</div>
+                        return <DiaClickMiniCalendario key={index} clase={clase} numDia={ numDia} mes={ mesSelecc }/>
                     }
                     if( numDia >= numDias){
                         diaProxMes += 1

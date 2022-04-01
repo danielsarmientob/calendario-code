@@ -1,5 +1,6 @@
 
 export const types =  {
-    selectDia: '[ui] seleccionar día miniCalendario',
-    mesSelecc: '[ui] seleccionar mes'
+    fechaSelecc: '[ui] seleccionar fecha',
+    mesSelecc: '[ui] seleccionar mes',
+    fechaActual: '[ui] ir a fecha actual'
 }

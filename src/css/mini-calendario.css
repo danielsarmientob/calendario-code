@@ -39,7 +39,17 @@ div [class*='is-inactive']:focus {
     color: var(--gray20);
     cursor: auto;
 } */
-
+.miniCalendario-dia.diaSelect {
+    display: flex;
+    block-size: 100%;
+    inline-size: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* background: var(--blue10); */
+    background: var(--blue20);
+    color: var(--white);
+}
 .miniCalendario-dia.is-today {
     display: flex;
     block-size: 100%;
@@ -73,3 +83,7 @@ div [class*='is-inactive']:focus {
 .miniCalendario-estado .btnDisable i{
     color: var(--gray10);
 }
+
+/* .diaSelect {
+    background: red;
+} */
