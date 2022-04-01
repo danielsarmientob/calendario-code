@@ -1,11 +1,10 @@
 .horaCalendario {
-    /* border: 1px solid red; */
     position: relative;
 }
 
 .horaCalendario-text {
     position: absolute;
-    inset-block-end: -0.3125rem;
+    inset-block-end: -3px;
     font: var(--body3-regular);
 }
 

@@ -45,7 +45,7 @@ body {
     color: var(--gray50);   
 }
 
-@media screen and (prefers-color-scheme: dark){
+/* @media screen and (prefers-color-scheme: dark){
     :root{
        --white: #222222;
        --gray50: #fffffe;
@@ -99,4 +99,4 @@ body {
         color: var(--gray50);
     }
 }
-
+ */

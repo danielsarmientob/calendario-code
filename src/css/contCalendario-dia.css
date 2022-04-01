@@ -1,0 +1,8 @@
+.contCalendarioDia .calendarioDia {
+    text-align: start;
+}
+
+.contCalendarioDia .calendarioDia a {
+    max-inline-size: 2.75rem;
+    text-align: center;
+}

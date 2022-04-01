@@ -1,11 +1,21 @@
+@import './contCalendario-dia.css';
+
 .mainCalendario {
     padding-inline: 1.5rem;
     color: var(--gray20);
     position: relative;
+    margin-bottom: 2rem;
 }
 .calendarioSemana { 
     display: grid;
     grid-template-columns: 2.75rem repeat(7,minMax(7.5rem,10rem));
+    grid-template-rows: 7.75rem repeat(24,minMax(4rem,auto));
+    block-size: inherit;
+}
+
+.contCalendarioDia {
+    display: grid;
+    grid-template-columns:  2.75rem minMax(52.5rem, 70rem);
     grid-template-rows: 7.75rem repeat(24,minMax(4rem,auto));
     block-size: inherit;
 }

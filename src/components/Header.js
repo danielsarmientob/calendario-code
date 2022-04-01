@@ -4,6 +4,7 @@ import avatar from '../img/avatar.png';
 import logo from '../img/logo.png';
 import { BtnHoy } from './BtnHoy';
 import { ContFechaHeader } from './ContFechaHeader';
+import { SelectHeader } from './SelectHeader';
 
 export const Header = () => {
     return (
@@ -33,10 +34,7 @@ export const Header = () => {
             </div>
             
             <div className='header-secundary'>
-                <select className='select' name='' id=''>
-                    <option value={'semana'}>Semana</option>
-                    <option value={'dia'}>Día</option>
-                </select>            
+                <SelectHeader/>           
                 <div className='cover-header'>
                     <img src={avatar} title='Imagen de usuario' aria-label='Imagen de usuario'></img>
                 </div>    
