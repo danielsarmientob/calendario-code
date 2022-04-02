@@ -2,24 +2,46 @@
 import { types } from "../types/types";
 import { getDetallesMeses } from '../helpers/getDetallesMeses';
 
-const currentTime = new Date();
-const { calendario: mesesDetalles, diasSemanaNombre } = getDetallesMeses()
+// const currentTime = new Date();
+// const { calendario: mesesDetalles, diasSemanaNombre } = getDetallesMeses(currentTime.getFullYear())
 
+// const initialState = {
+//     mesActual: currentTime.getMonth(),
+//     mesSelecc: currentTime.getMonth(),
+//     diaActual: currentTime.getDate(),
+//     fechaSelecc: {
+//         dia: currentTime.getDate(),
+//         mes: currentTime.getMonth(),
+//     },
+//     mesesDetalles: mesesDetalles,
+//     diasNombre: diasSemanaNombre,
+//     yearActual: currentTime.getFullYear(),
+// }
 const initialState = {
-    mesActual: currentTime.getMonth(),
-    mesSelecc: currentTime.getMonth(),
-    diaActual: currentTime.getDate(),
-    fechaSelecc: {
-        dia: currentTime.getDate(),
-        mes: currentTime.getMonth(),
+    mesActual:  0,
+    mesSelecc:  0,
+    diaActual:  0,
+    fechaSelecc:{ 
+        dia: 0,
+        mes:  0,
     },
-    mesesDetalles: mesesDetalles,
-    diasNombre: diasSemanaNombre,
-    yearActual: currentTime.getFullYear(),
+    mesesDetalles: [],
+    diasNombre: [],
+    yearActual: 0,
+    yearSelecc: 0,
+    detalleList: false,
 }
 
 export const uiReducer = (state = initialState, action) =>{
     switch (action.type) {
+        case types.obtenerDetallesYear:
+            return action.payload
+        case types.cargarDetallesYear:
+            const {detalleList,...dataY} = state;
+            return({
+                ...dataY,
+                detalleList: action.payload.detalleList
+            })
         case types.mesSelecc:
             const { mesSelecc,...data } = state;
             return({
@@ -39,16 +61,18 @@ export const uiReducer = (state = initialState, action) =>{
         case types.fechaActual:
             
             return ({
-                mesActual: currentTime.getMonth(),
+                mesActual: state.mesActual,
                 mesSelecc: action.payload.mesSelecc,
-                diaActual: currentTime.getDate(),
+                diaActual: state.diaActual,
                 fechaSelecc: {
                     dia: action.payload.diaSelecc,
                     mes: action.payload.mesSelecc,
                 },
-                mesesDetalles: mesesDetalles,
-                diasNombre: diasSemanaNombre,
-                yearActual: currentTime.getFullYear(),
+                mesesDetalles: state.mesesDetalles,
+                diasNombre: state.diasSemanaNombre,
+                yearActual: state.yearActual,
+                yearSelecc: state.yearSelecc,
+                detalleList: state.detalleList
             });
             
             

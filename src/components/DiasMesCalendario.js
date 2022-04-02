@@ -9,11 +9,13 @@ export const DiasMesCalendario = () => {
     const { 
         mesActual,
         mesSelecc, 
-        diaActual, 
+        diaActual,
+        yearActual,
+        yearSelecc, 
         mesesDetalles 
     } = useSelector(state => state.ui);
    
-    // Si el mes anterior en diciembre del año pasado
+    // Si el mes anterior es diciembre del año pasado
     if(mesSelecc === 0) numDiasMesAnterior  = 31; 
     else {
         // Números de días del mes anterior
@@ -36,9 +38,8 @@ export const DiasMesCalendario = () => {
                         numDia += 1;
                         let clase = 'miniCalendario-dia'
                         
-                        if ((mesActual === mesSelecc) && (diaActual === numDia) ) clase = 'miniCalendario-dia is-today';
+                        if ((mesActual === mesSelecc) && (diaActual === numDia) && (yearActual === yearSelecc)) clase = 'miniCalendario-dia is-today';
 
-                        // return <div key={index} className={clase} tabIndex={'0'}>{numDia}</div>
                         return <DiaClickMiniCalendario key={index} clase={clase} numDia={ numDia} mes={ mesSelecc }/>
                     }
                     if( numDia >= numDias){

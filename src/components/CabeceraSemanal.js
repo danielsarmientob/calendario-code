@@ -7,13 +7,13 @@ import { DiaSeman } from './DiaSeman';
 export const CabeceraSemanal = () => {
     const { 
         fechaSelecc, 
-        yearActual, 
+        yearSelecc, 
         mesesDetalles,
         mesSelecc,
         diasNombre } = useSelector(state => state.ui);
 
-    // const semanaActual = getSemanaSelecc(1, yearActual, mesesDetalles,0)
-    const semanaActual=useMemo(() => getSemanaSelecc(fechaSelecc.dia, yearActual, mesesDetalles, mesSelecc), [fechaSelecc]);
+    // const semanaActual = getSemanaSelecc(1, yearSelecc, mesesDetalles,0)
+    const semanaActual=useMemo(() => getSemanaSelecc(fechaSelecc.dia, yearSelecc, mesesDetalles, mesSelecc), [fechaSelecc]);
     
    
     

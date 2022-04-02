@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { types } from '../types/types';
+import { uiCargandoDetallesYear, uiDetallesNuevoYearMini, uiMesSeleccAction, uiObtnerDetallesYear } from '../actions/uiActions';
 import { CabeceraMiniCalendario } from './CabeceraMiniCalendario';
 import { DiasMesCalendario } from './DiasMesCalendario';
 
@@ -10,7 +10,8 @@ export const Minicalendario = () => {
     const { 
         mesSelecc, 
         mesesDetalles,
-        yearActual,
+        yearSelecc,
+        fechaSelecc
     } = useSelector(state => state.ui);;
 
 
@@ -24,45 +25,40 @@ export const Minicalendario = () => {
 
    
     const handleNextMonth = ()=> {
-        const action = {
-            type: types.mesSelecc,
-            payload:{
-                mesSelecc: mesSelecc + 1,
-            }
-        }
-        dispatch(action)
+        if(mesSelecc === 11){
+            dispatch(uiDetallesNuevoYearMini(yearSelecc + 1, 0,fechaSelecc));
+        } 
+        else dispatch(uiMesSeleccAction(mesSelecc + 1));
     }
     const handlePrevMonth = ()=> {
-        const action = {
-            type: types.mesSelecc,
-            payload:{
-                mesSelecc: mesSelecc - 1,
-            }
+
+        if(mesSelecc === 0){
+            dispatch( uiDetallesNuevoYearMini(yearSelecc - 1, 11,fechaSelecc));
         }
-        dispatch(action)
+        else dispatch(uiMesSeleccAction(mesSelecc - 1));
+        
     }
     return (
         <div>
             <div className='miniCalendario-estado'>
                 <div className='miniCalendario-fecha'>
-                    <span>{ nombreMesCapitalizado } {yearActual}</span>
+                    <span>{ nombreMesCapitalizado } {yearSelecc}</span>
                 </div>
                 <div className='miniCalendario-navegacion'>
                     <button 
-                        className={`button `+((mesSelecc === 0)? 'btnDisable' : '')} 
+                        className={'button'} 
                         onClick={handlePrevMonth} 
-                        disabled={(mesSelecc === 0)? true : false} 
                         aria-label='Mes anterior'>
                         
                         <i className='icon-chevronLeft'></i>
                     </button>
                     <button 
-                        className={`button `+((mesSelecc === 11)? 'btnDisable' : '')} 
+                        className={'button'} 
                         onClick={handleNextMonth} 
-                        disabled={(mesSelecc === 11)? true : false}
                         aria-label='Siguiente mes'>
                         <i className='icon-chevronRight' aria-hidden={true}></i>
                     </button>
+                   
                 </div>
             </div>
             

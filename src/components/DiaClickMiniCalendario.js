@@ -4,7 +4,7 @@ import { types } from '../types/types';
 
 export const DiaClickMiniCalendario = ({clase, numDia, mes}) => {
     const dispatch = useDispatch();
-    const {fechaSelecc} = useSelector(state => state.ui);
+    const {fechaSelecc, yearActual, yearSelecc} = useSelector(state => state.ui);
     const handleChangeDay = ()=> {
         const action = {
             type: types.fechaSelecc,
@@ -19,7 +19,11 @@ export const DiaClickMiniCalendario = ({clase, numDia, mes}) => {
     return (
             <div  
                 onClick={handleChangeDay} 
-                className={((fechaSelecc.dia === numDia) && (fechaSelecc.mes === mes))? clase+' diaSelect' : clase} 
+                className={
+                    ((fechaSelecc.dia === numDia) && (fechaSelecc.mes === mes) && (yearActual === yearSelecc))
+                    ? clase+' diaSelect' 
+                    : clase
+                } 
                 tabIndex={'0'}
                 >
                     {numDia}

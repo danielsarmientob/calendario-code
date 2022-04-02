@@ -76,13 +76,3 @@ div [class*='is-inactive']:focus {
     background: var(--white);
 }
 
-.miniCalendario-estado .btnDisable {
-    cursor: auto;
-}
-.miniCalendario-estado .btnDisable i{
-    color: var(--gray10);
-}
-
-/* .diaSelect {
-    background: red;
-} */
