@@ -15,6 +15,7 @@
     text-decoration: none;
     color: currentColor;
     outline: none;
+    cursor: pointer;
 }
 
 .calendarioDia a:hover span:nth-of-type(1),

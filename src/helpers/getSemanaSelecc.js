@@ -3,7 +3,6 @@
 export const getSemanaSelecc = (diaSelecc,yearActual, mesesDetalles,mesSelecc) => {
 
     // Posibles valores : 0,1,2,3,4,,5,6
-
     const numDiaSemana = new Date(yearActual,mesSelecc,diaSelecc).getDay();
     const semanaActual = [...Array(7).keys()];
     const inicio = diaSelecc - numDiaSemana;
@@ -23,17 +22,17 @@ export const getSemanaSelecc = (diaSelecc,yearActual, mesesDetalles,mesSelecc) =
         if(dia < 1){
             return ({
                 numero: numDiasMesAnterior - (numDiaSemana-index-1),
-                activo: false
+                activo: false,
             })
             
         }else {
             if(dia > numDias) return ({
                 numero: dia-numDias,
-                activo: false
+                activo: false,
             })
             else return ({
                 numero: dia,
-                activo: true
+                activo: true,
             })
         } 
     })
