@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,15 +11,15 @@ export const DiaClickMiniCalendario = ({
     year
 }) => {
     const dispatch = useDispatch();
-    const {fechaSelecc, yearActual, yearSelecc} = useSelector(state => state.ui);
+    const {fechaSelecc} = useSelector(state => state.ui);
     const handleChangeDay = ()=> {
-        dispatch(fechaSeleccSinCambiarYear(numDia, mes));
+        dispatch(fechaSeleccSinCambiarYear(numDia, mes, year));
     }
     return (
             <div  
                 onClick={handleChangeDay} 
                 className={
-                    ((fechaSelecc.dia === numDia) && (fechaSelecc.mes === mes) && (year === yearSelecc))
+                    ((fechaSelecc.dia === numDia) && (fechaSelecc.mes === mes) && (fechaSelecc.year === year))
                     ? clase+' diaSelect' 
                     : clase
                 } 

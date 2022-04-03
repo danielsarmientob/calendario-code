@@ -18,7 +18,6 @@ export const uiObtnerDetallesYear= (year)=> {
             diasNombre: diasSemanaNombre,
             yearActual: currentTime.getFullYear(),
             yearSelecc: currentTime.getFullYear(),
-            detalleList: true
         }
         const action={
             type: types.obtenerDetallesYear,
@@ -42,7 +41,6 @@ export const uiDetallesNuevoYearMini=(year, mes, fechaSelecc)=>{
             diasNombre: diasSemanaNombre,
             yearActual: currentTime.getFullYear(),
             yearSelecc: year,
-            detalleList: true
         }
         const action={
             type: types.obtenerDetallesYear,
@@ -61,22 +59,14 @@ export const uiMesSeleccAction = (mesSelecc)=>{
 
 }
 
-export const fechaSeleccSinCambiarYear = (numDia, mesSelecc)=> {
+export const fechaSeleccSinCambiarYear = (diaSelecc, mesSelecc, yearSelecc)=> {
     return ({
         type: types.fechaSelecc,
         payload:{
-            diaSelecc: numDia,
-            mesSelecc: mesSelecc
+            diaSelecc,
+            mesSelecc,
+            yearSelecc
         }
     })
     
-}
-
-export const uiCargandoDetallesYear=(terminado)=> {
-    return ({
-        type: types.cargarDetallesYear,
-        payload: {
-            detalleList: terminado
-        }
-    })
 }

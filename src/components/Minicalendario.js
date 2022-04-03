@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { uiCargandoDetallesYear, uiDetallesNuevoYearMini, uiMesSeleccAction, uiObtnerDetallesYear } from '../actions/uiActions';
+import { uiDetallesNuevoYearMini, uiMesSeleccAction} from '../actions/uiActions';
 import { CabeceraMiniCalendario } from './CabeceraMiniCalendario';
 import { DiasMesCalendario } from './DiasMesCalendario';
 

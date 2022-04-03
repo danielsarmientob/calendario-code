@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { uiObtnerDetallesYear } from '../actions/uiActions';
 
@@ -14,7 +14,7 @@ export const HomePage = () => {
     useEffect( () => {
         const currentTime = new Date();
         dispatch( uiObtnerDetallesYear(currentTime.getFullYear()));
-    }, [])
+    }, [dispatch])
     if(yearSelecc === 0 ) return <div></div>
     return (
         <div>

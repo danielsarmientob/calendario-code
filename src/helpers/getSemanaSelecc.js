@@ -6,7 +6,8 @@ export const getSemanaSelecc = (
     mesesDetalles,
     mesSelecc
     ) => {
-
+    
+    console.log('getSemanaSelecc')
     // Posibles valores : 0,1,2,3,4,,5,6
     const numDiaSemana = new Date(yearSelecc,mesSelecc,diaSelecc).getDay();
     const semanaActual = [...Array(7).keys()];
@@ -24,7 +25,7 @@ export const getSemanaSelecc = (
     let incioMesAnterior = 0;
     if(inicio <= 0) incioMesAnterior = inicio - 1
     // console.log(inicio,numDiaSemana,diaSelecc)
-
+    
     return semanaActual.map((nume,index)=>{
         let dia = inicio + index
         let yearPertenece = yearSelecc;

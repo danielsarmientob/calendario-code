@@ -25,7 +25,7 @@ export const CabeceraSemanal = () => {
                     diasNombre.map((nombreDia,index)=>{
                         // Escoger las tres primeras letras, convertirlas en mayúsculas y quitar tildes
                         const nomDiaSinTilde = nombreDia.slice(0,3).toUpperCase().normalize('NFD').replace( /[^-A-Za-z0-9]+/g, '' );
-                        console.log(semanaActual)
+                        // console.log(semanaActual)
                         return (<DiaSeman 
                                     key={index} 
                                     nomDia={ nomDiaSinTilde } 

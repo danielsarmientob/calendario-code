@@ -18,15 +18,15 @@ export const DiaSeman = ({
        
         if(yearSelecc=== yearPertenece){
             
-            dispatch(fechaSeleccSinCambiarYear(Number(numDia),mes))
+            dispatch(fechaSeleccSinCambiarYear(Number(numDia),mes, yearPertenece))
             dispatch(uiMesSeleccAction(mes))
         }else{
             if(yearSelecc < yearPertenece){
-                dispatch(uiDetallesNuevoYearMini(yearPertenece,0,{dia:Number(numDia), mes: 0}));
+                dispatch(uiDetallesNuevoYearMini(yearPertenece,0,{dia:Number(numDia), mes: 0, year: yearPertenece}));
                 dispatch(uiMesSeleccAction(0))
             }
             else{
-                dispatch(uiDetallesNuevoYearMini(yearPertenece,11,{dia:Number(numDia), mes: 11}));
+                dispatch(uiDetallesNuevoYearMini(yearPertenece,11,{dia:Number(numDia), mes: 11, year: yearPertenece}));
                 dispatch(uiMesSeleccAction(11))
             } 
         }
