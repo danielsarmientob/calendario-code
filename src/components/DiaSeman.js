@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { cambiarModo } from '../actions/uiHeaderActions'
-import { fechaSeleccSinCambiarYear, uiDetallesNuevoYearMini } from '../actions/uiActions';
+import { fechaSeleccSinCambiarYear, uiDetallesNuevoYearMini, uiMesSeleccAction } from '../actions/uiActions';
 
 export const DiaSeman = ({
     nomDia, 
@@ -12,18 +12,26 @@ export const DiaSeman = ({
     yearPertenece,
     mes
 }) => {
-    const {yearActual} = useSelector(state => state.ui)
+    const {yearActual, yearSelecc} = useSelector(state => state.ui)
     const dispatch = useDispatch();
     const handleDay = ()=> {
        
-        if(yearActual === yearPertenece){
-            // console.log(mes)
+        if(yearSelecc=== yearPertenece){
+            
             dispatch(fechaSeleccSinCambiarYear(Number(numDia),mes))
+            dispatch(uiMesSeleccAction(mes))
         }else{
-            if(yearActual < yearPertenece) dispatch(uiDetallesNuevoYearMini(yearPertenece,0,{dia:Number(numDia), mes: 0}))
-            else dispatch(uiDetallesNuevoYearMini(yearPertenece,11,{dia:Number(numDia), mes: 11}))
+            if(yearSelecc < yearPertenece){
+                dispatch(uiDetallesNuevoYearMini(yearPertenece,0,{dia:Number(numDia), mes: 0}));
+                dispatch(uiMesSeleccAction(0))
+            }
+            else{
+                dispatch(uiDetallesNuevoYearMini(yearPertenece,11,{dia:Number(numDia), mes: 11}));
+                dispatch(uiMesSeleccAction(11))
+            } 
         }
         dispatch(cambiarModo('dia'))
+        
         
     }
     return (
