@@ -40,7 +40,13 @@ export const DiasMesCalendario = () => {
                         
                         if ((mesActual === mesSelecc) && (diaActual === numDia) && (yearActual === yearSelecc)) clase = 'miniCalendario-dia is-today';
 
-                        return <DiaClickMiniCalendario key={index} clase={clase} numDia={ numDia} mes={ mesSelecc }/>
+                        return <DiaClickMiniCalendario 
+                                key={index} 
+                                clase={clase} 
+                                numDia={ numDia} 
+                                mes={ mesSelecc }
+                                year={yearSelecc}
+                        />
                     }
                     if( numDia >= numDias){
                         diaProxMes += 1

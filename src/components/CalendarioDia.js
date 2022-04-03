@@ -13,7 +13,13 @@ export const CalendarioDia = () => {
     return (
         <div className='contCalendarioDia'>
             <div></div>
-            <DiaSeman nomDia={nomDia.toString()} numDia={fechaSelecc.dia.toString()} semanaDiaActual={true}/>
+            <DiaSeman 
+                nomDia={nomDia.toString()} 
+                numDia={fechaSelecc.dia.toString()} 
+                semanaDiaActual={true}
+                yearPertenece={2022}
+                mes={0}
+            />
 
             <div className='horaCalendario'>
                 <span className='horaCalendario-text'>01:00</span>

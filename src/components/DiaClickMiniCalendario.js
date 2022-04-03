@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { types } from '../types/types';
+import PropTypes from 'prop-types';
 
-export const DiaClickMiniCalendario = ({clase, numDia, mes}) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { fechaSeleccSinCambiarYear } from '../actions/uiActions';
+
+export const DiaClickMiniCalendario = ({
+    clase, 
+    numDia, 
+    mes,
+    year
+}) => {
     const dispatch = useDispatch();
     const {fechaSelecc, yearActual, yearSelecc} = useSelector(state => state.ui);
     const handleChangeDay = ()=> {
-        const action = {
-            type: types.fechaSelecc,
-            payload: {
-                diaSelecc: numDia,
-                mesSelecc: fechaSelecc.mes
-            }
-        }
-        dispatch(action);
-        
+        dispatch(fechaSeleccSinCambiarYear(numDia, mes));
     }
     return (
             <div  
                 onClick={handleChangeDay} 
                 className={
-                    ((fechaSelecc.dia === numDia) && (fechaSelecc.mes === mes) && (yearActual === yearSelecc))
+                    ((fechaSelecc.dia === numDia) && (fechaSelecc.mes === mes) && (year === yearSelecc))
                     ? clase+' diaSelect' 
                     : clase
                 } 
@@ -29,4 +28,11 @@ export const DiaClickMiniCalendario = ({clase, numDia, mes}) => {
                     {numDia}
             </div>       
     )
+}
+
+DiaClickMiniCalendario.propTypes = {
+    clase:  PropTypes.string.isRequired,
+    numDia: PropTypes.number.isRequired,
+    mes:    PropTypes.number.isRequired,
+    year:   PropTypes.number.isRequired
 }

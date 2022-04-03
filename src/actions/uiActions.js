@@ -61,6 +61,17 @@ export const uiMesSeleccAction = (mesSelecc)=>{
 
 }
 
+export const fechaSeleccSinCambiarYear = (numDia, mesSelecc)=> {
+    return ({
+        type: types.fechaSelecc,
+        payload:{
+            diaSelecc: numDia,
+            mesSelecc: mesSelecc
+        }
+    })
+    
+}
+
 export const uiCargandoDetallesYear=(terminado)=> {
     return ({
         type: types.cargarDetallesYear,

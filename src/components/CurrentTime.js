@@ -26,16 +26,12 @@ export const CurrentTime = () => {
 
         const cellInlineSize = calendarInlineSize / 7
 
-        // console.log({ calendarBlockSize }, { calendarInlineSize })
         const calendarDayBlockSize = document.querySelector('.taskCell').clientHeight
         calendarBlockSize = calendarBlockSize - calendarDayBlockSize
-        // console.log({ calendarBlockSize })
         const cellBlockSize = calendarBlockSize / 24
-        // console.log({ cellBlockSize }, { cellInlineSize })
 
         $currentTime.style.top = `${cellBlockSize * (currentHour) + calendarDayBlockSize + (cellBlockSize / 60) * currentMin}px`
         $currentTime.style.left = `${cellInlineSize * (currentDay) + calendarTimezoneCellInlineSize + 24}px`
-        // console.log(calendarBlockSize,calendarInlineSize)
     }, [width])
     
     return (

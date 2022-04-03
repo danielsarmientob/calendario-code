@@ -1,36 +1,35 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { types } from '../types/types';
 
-export const DiaSeman = ({nomDia, numDia, semanaDiaActual}) => {
-    const {ui, uiHeader} = useSelector(state => state)
-    const {mesSelecc} = ui;
+import { cambiarModo } from '../actions/uiHeaderActions'
+import { fechaSeleccSinCambiarYear, uiDetallesNuevoYearMini } from '../actions/uiActions';
+
+export const DiaSeman = ({
+    nomDia, 
+    numDia, 
+    semanaDiaActual,
+    yearPertenece,
+    mes
+}) => {
+    const {yearActual} = useSelector(state => state.ui)
     const dispatch = useDispatch();
     const handleDay = ()=> {
-        const actionSeleccFecha = {
-            type: types.fechaSelecc,
-            payload:{
-                diaSelecc: Number(numDia),
-                mesSelecc: mesSelecc
-            }
+       
+        if(yearActual === yearPertenece){
+            // console.log(mes)
+            dispatch(fechaSeleccSinCambiarYear(Number(numDia),mes))
+        }else{
+            if(yearActual < yearPertenece) dispatch(uiDetallesNuevoYearMini(yearPertenece,0,{dia:Number(numDia), mes: 0}))
+            else dispatch(uiDetallesNuevoYearMini(yearPertenece,11,{dia:Number(numDia), mes: 11}))
         }
-        dispatch(actionSeleccFecha)
-
-        const actionModo = {
-            type: types.cambiarModo,
-            payload: {
-                modo: 'dia'
-            }
-        }
-
-        dispatch(actionModo)
-
+        dispatch(cambiarModo('dia'))
+        
     }
     return (
         <h2 className={`calendarioDia ${semanaDiaActual? 'calendarioDia-isActive' : ''}`}>
             <a onClick={handleDay}>
-                <time dateTime='18-03-2022'>
+                <time dateTime=''>
                     <span>{ nomDia }</span>
                     <br/>
                     <span>{ numDia }</span>
@@ -43,5 +42,7 @@ export const DiaSeman = ({nomDia, numDia, semanaDiaActual}) => {
 DiaSeman.propTypes = {
     nomDia: PropTypes.string.isRequired,
     numDia: PropTypes.string.isRequired,
-    semanaDiaActual: PropTypes.bool.isRequired
+    semanaDiaActual: PropTypes.bool.isRequired,
+    yearPertenece: PropTypes.number.isRequired,
+    mes: PropTypes.number.isRequired
 }
