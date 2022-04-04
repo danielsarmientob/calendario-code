@@ -3,7 +3,7 @@
 ## Introducción
 Estructura funcional de un calendario para escritorio.
 
-![Esta es una imagen de ejemplo](/src/img/avatar.png)
+![Imagen calendario](/src/img/calendario.png)
 
 ## Instalación 
 > npm install
