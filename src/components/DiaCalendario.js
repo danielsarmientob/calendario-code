@@ -17,13 +17,8 @@ export const DiaCalendario = ({ titulo='', hora='' }) => {
     }
 
     const handleOpenModal = (e)=> {
-        // const x = e.pageX
-        // const y = e.pageY
         const $modal = document.querySelector('.modal');
         $modal.style.visibility = 'visible';
-        // const $contentMoodal = document.querySelector('.contentModal');
-        // $contentMoodal.style.left = `${x}px`
-        // $contentMoodal.style.top = `${y}px`
     }
 
     return (

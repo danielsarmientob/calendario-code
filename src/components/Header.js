@@ -4,6 +4,7 @@ import avatar from '../img/avatar.png';
 import logo from '../img/logo.png';
 import { BtnHoy } from './BtnHoy';
 import { ContFechaHeader } from './ContFechaHeader';
+import { HeaderNavigationCalendario } from './HeaderNavigationCalendario';
 import { SelectHeader } from './SelectHeader';
 
 export const Header = () => {
@@ -21,14 +22,7 @@ export const Header = () => {
                 
                 <div className='estado-calendario'>
                     <BtnHoy/>
-                    <span className='navegacion-calendario'>
-                        <a href='#' className='button btnIcon' aria-label='Semana anterior'>
-                            <i className='icon-chevronLeft' aria-hidden={true}></i>
-                        </a>
-                        <a href='#' className='button btnIcon' aria-label='Siguiente semana'>
-                            <i className='icon-chevronRight' aria-hidden={true}></i>
-                        </a>
-                    </span>
+                    <HeaderNavigationCalendario/>
                    <ContFechaHeader/>
                 </div>
             </div>

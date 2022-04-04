@@ -13,6 +13,7 @@ export const uiObtnerDetallesYear= (year)=> {
             fechaSelecc: {
                 dia: currentTime.getDate(),
                 mes: currentTime.getMonth(),
+                year: currentTime.getFullYear(),
             },
             mesesDetalles: mesesDetalles,
             diasNombre: diasSemanaNombre,

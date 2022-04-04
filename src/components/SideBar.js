@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { BtnCrear } from './BtnCrear';
 import { ContSelects } from './ContSelects';
 import { Minicalendario } from './Minicalendario';
 
@@ -10,13 +12,7 @@ export const SideBar = () => {
     return (
         <div className='sideBar'>
             
-            <div className='btnCrear'>
-                <button className='button btnIconText'>
-                    <i className='icon-plus'></i>
-                    <span>Crear</span>
-                </button>  
-            </div>
-            
+            <BtnCrear/>            
             <Minicalendario/>
             
             <form className='search' role={'search'} aria-label='Buscar personas'>
